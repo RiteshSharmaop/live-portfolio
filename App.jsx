@@ -52,10 +52,11 @@ const DATA = {
     },
   ],
   skills: [
-    ["Languages", "C++, Java, Python, JavaScript, TypeScript, HTML, CSS"],
+    ["Languages", "C++, Java, Python, JavaScript, TypeScript, Go, HTML, CSS"],
     ["Frameworks", "React.js, Node.js, Express.js, Django, Tailwind CSS"],
     ["Databases", "MongoDB, PostgreSQL, Redis"],
-    ["Tools", "Git, GitHub, Docker, Kafka, Linux, VS Code"],
+    ["Tools", " Git, GitHub, Kafka, Redis, Docker, Linux, VS Code, Sublime Text, Eraser IO, Postman"],
+    ["Concepts", "Data Structures & Algorithms, Operating Systems, Database Management Systems, System Design, Computer Networks, Object-Oriented Programming, Agile Environment"],
   ],
   achievements: [
     { date: "Codeforces", title: "Specialist (noob1204)", text: "Global ranks of 842, 859 and 933 in contests." },
@@ -137,8 +138,24 @@ export default function App() {
   }, []);
 
   return (
-    <div className="wrap">
-      <header>
+    <>
+      <div className="site-notice" role="status">
+        <div className="site-notice__track" aria-hidden="true">
+          {[0, 1].map((sequence) => (
+            <div className="site-notice__sequence" key={sequence}>
+              {[0, 1, 2, 3].map((message) => (
+                <p className="site-notice__message" key={message}>
+                  site is not working because of lazy programmer
+                  <span aria-hidden="true"> · </span>
+                </p>
+              ))}
+            </div>
+          ))}
+        </div>
+        <span className="sr-only">site is not working because of lazy programmer</span>
+      </div>
+      <div className="wrap">
+        <header>
         <div>
           <h1>Ritesh Sharma</h1>
           <h2 className="role">Software Engineer</h2>
@@ -169,9 +186,9 @@ export default function App() {
             </li>
           ))}
         </ul>
-      </header>
+        </header>
 
-      <main>
+        <main>
         <Section id="about" title="About">
           <p>
             I’m a Computer Science (AI &amp; ML) student at <b className="k">Lakshmi Narain College of Technology</b> in
@@ -211,11 +228,23 @@ export default function App() {
           {DATA.achievements.map((x) => <Item key={x.title} {...x} />)}
         </Section>
 
-        <footer>
-          Designed after Brittany Chiang’s site and built with React. Get in touch at{" "}
-          <a href="mailto:ritesh.lnct@gmail.com" className="mail">ritesh.lnct@gmail.com</a>.
-        </footer>
-      </main>
-    </div>
+       
+  
+      <footer>
+        Crafted with <span className="heart">♡</span> in India by a psycho lazy
+        developer who went AFK in Valorant but never AFK in procrastination.
+        <br />
+        Left mid-match because CSS bugs were easier to kill than his opponents
+        (until one div refused to center itself). 🇮🇳💀
+        <br />
+        Get in touch at{" "}
+        <a href="mailto:ritesh.lnct@gmail.com" className="mail">
+          ritesh.lnct@gmail.com
+        </a>.
+      </footer>
+
+        </main>
+      </div>
+    </>
   );
 }
